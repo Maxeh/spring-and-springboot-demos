@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:text="'Hello, ' + ${name} + '!'" />
+<a href="/jdbc">JDBC example</a> <br>
+<a href="/hibernate/add?name=test&email=test@test.de">Hibernate example: Add name + email </a> <br>
+<a href="/hibernate/all">Hibernate example: Show all </a> <br>
+</body>
+</html>

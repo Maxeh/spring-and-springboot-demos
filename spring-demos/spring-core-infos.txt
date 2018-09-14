@@ -1,0 +1,15 @@
+Summary Spring core:
+
+There are a couple of different ways to do the IoC:
+- use only XML configuration (this is normally only found in legacy projects)
+- use XML (with component scan) and java annotations
+- use a java config file (with component scan) and java annotations
+- use a java config file with beans and java annotations
+
+=> you can do the component scan approach or explicitly define the beans yourself in the java config file
+advantages / disadvantages: https://stackoverflow.com/questions/10604298/spring-component-versus-bean
+
+More infos:
+- the annotations @PostConstruct and @PreDestroy are not part of spring but part of the 
+javax.annotation package. Spring recognizes the annotations and performs the actions.
+

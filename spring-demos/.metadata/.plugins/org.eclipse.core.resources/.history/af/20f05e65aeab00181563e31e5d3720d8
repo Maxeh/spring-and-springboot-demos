@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+	<h2>Student confirmation</h2>
+	<hr>
+	CONFIRMED ${student.firstName} ${student.lastName}
+	<br>
+	Country: ${student.country}
+	<br>
+	Programming language: ${student.favoriteLanguage}
+</body>
+
+</html>

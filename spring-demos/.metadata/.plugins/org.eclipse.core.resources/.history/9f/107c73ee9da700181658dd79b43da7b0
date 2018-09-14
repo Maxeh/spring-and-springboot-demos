@@ -1,0 +1,44 @@
+package com.luv2code.springdemo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+public class TennisCoach implements Coach {
+	
+	/*@Autowired
+	@Qualifier("goodFortuneService")*/
+	private FortuneService fortuneService;
+	
+	//define a default constructor
+	public TennisCoach() {
+		System.out.println("inside tennisCoach constructor");
+	}
+	
+	// define a setter method (setter injection)
+	// info: you can use any method name
+	/*@Autowired
+	public void setFortuneService(FortuneService fortuneService) {
+		System.out.println("inside tennisCoach setFortuneService");
+		this.fortuneService = fortuneService;
+	}*/
+	
+	// constructor injection
+	@Autowired
+	public TennisCoach(@Qualifier("happyFortuneService") FortuneService fortuneService) {
+		this.fortuneService = fortuneService;
+	}
+
+	@Override
+	public String getDailyWorkout() {
+		return "Practise your backhand volley";
+	}
+
+	@Override
+	public String getFortune() {
+		return fortuneService.getFortune();
+	}
+	
+	
+}

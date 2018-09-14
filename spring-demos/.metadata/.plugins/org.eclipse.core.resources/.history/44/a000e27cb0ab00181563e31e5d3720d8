@@ -1,0 +1,27 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+	<h2>Student confirmation</h2>
+	<hr>
+	CONFIRMED ${student.firstName} ${student.lastName}
+	<br>
+	Country: ${student.country}
+	<br>
+	Programming language: ${student.favoriteLanguage}
+	<br>
+	Operating system: 
+	<ul>
+		<c:forEach items="${student.operatingSystems}" var="current">
+			[<li><c:out value="${current}" />]</li>
+		</c:forEach>
+		 
+	</ul>
+
+</body>
+
+</html>

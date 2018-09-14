@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello world - Result</title>
+</head>
+
+<body>
+	Hello world of Spring!
+	
+	<br><br>
+	
+	Student name: ${param.studentName}
+
+</body>
+</html>

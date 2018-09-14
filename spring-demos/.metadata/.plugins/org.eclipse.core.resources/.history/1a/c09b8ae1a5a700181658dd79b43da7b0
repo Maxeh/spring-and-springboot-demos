@@ -1,0 +1,15 @@
+package com.luv2code.springdemo;
+
+import java.util.Random;
+
+public class FileFortuneService implements FortuneService {
+	
+	String[] fortunes;
+
+	@Override
+	public String getFortune() {
+		Random rand = new Random();
+		return fortunes[rand.nextInt(fortunes.length)];
+	}
+
+}

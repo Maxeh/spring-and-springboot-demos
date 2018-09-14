@@ -1,0 +1,12 @@
+package com.luv2code.springdemo;
+
+public class FileFortuneService implements FortuneService {
+	
+	String[] fortunes;
+
+	@Override
+	public String getFortune() {
+		return null;
+	}
+
+}

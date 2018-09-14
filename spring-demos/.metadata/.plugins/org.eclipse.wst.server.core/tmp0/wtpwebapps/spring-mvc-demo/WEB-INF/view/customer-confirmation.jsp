@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+	<h2>Customer confirmation</h2>
+	<hr>
+	First name: ${customer.firstName} <br>
+	Last name: ${customer.lastName} <br>
+	Free passes: ${customer.freePasses} <br>
+	Postal code: ${customer.postalCode} <br>
+	Course code: ${customer.courseCode}
+</body>
+
+</html>
+	

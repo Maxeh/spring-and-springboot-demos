@@ -1,0 +1,16 @@
+For a spring mysql project you have to set up a new database and you should create a new mysql user for the project.
+
+mysql> create database db_example;
+mysql> create user 'springuser'@'localhost' identified by 'ThePassword';
+mysql> grant all on db_example.* to 'springuser'@'localhost';
+// or: mysql> grant all privileges on *.* to 'springuser'@'localhost'; // grant access to all databases (the word 'privileges' is not required)
+
+After the inital configuration is done by hibernate, revoke the privileges to secure the app.
+
+mysql> revoke all on db_example.* from 'springuser'@'localhost';
+mysql> grant select, insert, delete, update on db_example.* to 'springuser'@'localhost';
+// or use *.* for all databases
+
+Now make this change to your src/main/resources/application.properties:
+
+spring.jpa.hibernate.ddl-auto=none
