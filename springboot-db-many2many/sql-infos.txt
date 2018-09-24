@@ -1,0 +1,25 @@
+How to query a m:n relation:
+
+Approach 1 with Join: 
+
+SELECT post.title, tag.name
+
+FROM post
+
+INNER JOIN post_tags
+
+ON post.id = post_tags.post_id
+
+INNER JOIN tag
+
+ON post_tags.tag_id = tag.id
+
+Approach 2 with WHERE:
+
+SELECT post.title, tag.name
+
+FROM post, tag, post_tags
+
+WHERE post.id = post_tags.post_id
+
+AND post_tags.tag_id = tag.id

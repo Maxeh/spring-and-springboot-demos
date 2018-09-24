@@ -1,0 +1,24 @@
+Link: https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/
+
+Bidirectional one-to-many mapping:
+
+The idea with bidirectional one-to-many association is to allow you to keep a collection of child entities 
+in the parent, and enable you to persist and retrieve the child entities via the parent entity. 
+
+Problems with bidirectional one-to-many mapping:
+
+A bidirectional mapping tightly couples the many-side of the relationship to the one-side. In our example, if you load comments via the post entity, you won’t be able to limit the number of comments loaded. 
+That essentially means that you won’t be able to paginate. If you load comments via the post entity, you won’t be 
+able to sort them based on different properties. You can define a default sorting order using @OrderColumn annotation 
+but that will have performance implications. You’ll find yourself banging your head around something called a LazyInitializationException.
+
+When can I use a bidirectional one-to-many mapping:
+
+A bidirectional one-to-many mapping might be a good idea if the number of child entities is limited. Moreover, a bidirectional mapping 
+tightly couples the many-side of the relationship to the one-side. Many times, this tight coupling is desired. For example, consider a 
+Survey application with a Question and an Option entity exhibiting a one-to-many relationship between each other. In the survey app, 
+a Question can have a set of Options. Also, every Question is tightly coupled with its Options. When you create a Question, 
+you’ll also provide a set of Options. And, when you retrieve a Question, you will also need to fetch the Options. Moreover, a 
+Question can have at max 4 or 5 Options. These kind of cases are perfect for bi-directional mappings.
+
+So, to decide between bidirectional and unidirectional mappings, you should think whether the entities have a tight coupling or not.
