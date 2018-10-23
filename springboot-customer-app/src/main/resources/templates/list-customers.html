@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+    <link th:href="@{/css/list.css}" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h2>CRM - Customer Relationship Manager</h2>
+        </div>
+    </div>
+
+    <div id="container">
+        <table>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+
+            <th:block th:each="customer : ${customers}">
+                <tr>
+                    <td th:text="${customer.firstName}"></td>
+                    <td th:text="${customer.lastName}"></td>
+                    <td th:text="${customer.email}"></td>
+                    <td>
+                        <a th:href="@{'showUpdateForm?customerId=' + ${customer.id}}">Update</a> |
+                        <a th:href="@{'delete?customerId=' + ${customer.id}}" onclick="if(!confirm('Do you really want to delete this customer?')) return false;">Delete</a>
+                    </td>
+                </tr>
+            </th:block>
+        </table>
+
+        <input type="button" value="Add Customer" onclick="window.location.href='showAddForm';"/>
+    </div>
+</body>
+</html>

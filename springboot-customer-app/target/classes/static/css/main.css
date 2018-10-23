@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper {
+    width: 700px;
+    padding: 10px;
+    background: #22313F;
+    display: inline-block;
+    border: 1px solid grey;
+    margin: 15px;
+}
+#wrapper #header h2 {
+    color: #FFF;
+    font-size: 26px;
+}

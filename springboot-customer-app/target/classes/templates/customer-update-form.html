@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+    <link th:href="@{/css/form.css}" rel="stylesheet" />
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <h2>CRM - Customer Relationship Manager</h2>
+    </div>
+</div>
+
+<div id="container">
+    <h2>Update customer</h2>
+
+    <form action="#" th:action="@{update}" th:object="${customer}" method="post">
+        <table>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" th:field="*{firstName}" /></td>
+            </tr>
+            <tr>
+                <td>Last name:</td>
+                <td><input type="text" th:field="*{lastName}" /></td>
+
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" th:field="*{email}" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="submit-row"><input type="submit" value="Submit" class="submit" /></td>
+            </tr>
+            <tr>
+                <td><a th:href="@{list}">Back to List</a> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

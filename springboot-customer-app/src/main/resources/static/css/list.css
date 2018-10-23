@@ -1,0 +1,28 @@
+#container { margin: 0 15px; }
+#container input[type="button"] {
+    margin-top: 15px;
+    border: 1px solid grey;
+    padding: 5px;
+}
+#container table {
+    width: 700px;
+    border-collapse: collapse;
+}
+#container table tr {
+    border: 1px solid grey;
+    padding: 4px;
+}
+#container table tr:nth-child(odd) { background: #CCC; }
+#container table th {
+    padding: 10px;
+    background: #22313F;
+    color: #FFF;
+}
+#container table td {
+    text-align: center;
+    width: 25%;
+}
+#container table td a, #container table td a:visited  {
+    color: #000;
+}
+
